@@ -63,6 +63,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBoxValue1 = new System.Windows.Forms.TextBox();
+            this.textBoxValue2 = new System.Windows.Forms.TextBox();
+            this.textBoxValue3 = new System.Windows.Forms.TextBox();
+            this.textBoxValue4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnInsert
@@ -119,7 +123,7 @@
             this.textOp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textOp1.Location = new System.Drawing.Point(26, 160);
             this.textOp1.Name = "textOp1";
-            this.textOp1.Size = new System.Drawing.Size(275, 21);
+            this.textOp1.Size = new System.Drawing.Size(227, 21);
             this.textOp1.TabIndex = 2;
             this.textOp1.TextChanged += new System.EventHandler(this.textOp1_TextChanged);
             // 
@@ -129,7 +133,7 @@
             this.textOp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textOp2.Location = new System.Drawing.Point(26, 215);
             this.textOp2.Name = "textOp2";
-            this.textOp2.Size = new System.Drawing.Size(275, 21);
+            this.textOp2.Size = new System.Drawing.Size(227, 21);
             this.textOp2.TabIndex = 3;
             this.textOp2.TextChanged += new System.EventHandler(this.textOp2_TextChanged);
             // 
@@ -139,7 +143,7 @@
             this.textOp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textOp3.Location = new System.Drawing.Point(26, 278);
             this.textOp3.Name = "textOp3";
-            this.textOp3.Size = new System.Drawing.Size(275, 21);
+            this.textOp3.Size = new System.Drawing.Size(227, 21);
             this.textOp3.TabIndex = 4;
             this.textOp3.TextChanged += new System.EventHandler(this.textOp3_TextChanged);
             // 
@@ -149,7 +153,7 @@
             this.textOp4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textOp4.Location = new System.Drawing.Point(26, 334);
             this.textOp4.Name = "textOp4";
-            this.textOp4.Size = new System.Drawing.Size(275, 21);
+            this.textOp4.Size = new System.Drawing.Size(227, 21);
             this.textOp4.TabIndex = 5;
             this.textOp4.TextChanged += new System.EventHandler(this.textOp4_TextChanged);
             // 
@@ -159,7 +163,7 @@
             this.textCorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCorrect.Location = new System.Drawing.Point(26, 391);
             this.textCorrect.Name = "textCorrect";
-            this.textCorrect.Size = new System.Drawing.Size(275, 21);
+            this.textCorrect.Size = new System.Drawing.Size(227, 21);
             this.textCorrect.TabIndex = 6;
             this.textCorrect.TextChanged += new System.EventHandler(this.textCorrect_TextChanged);
             // 
@@ -170,9 +174,9 @@
             this.label1.ForeColor = System.Drawing.Color.Tomato;
             this.label1.Location = new System.Drawing.Point(23, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 15);
+            this.label1.Size = new System.Drawing.Size(88, 15);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Enter Quiz Question";
+            this.label1.Text = "Enter Question";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -262,9 +266,9 @@
             // 
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(318, 160);
+            this.listBox1.Location = new System.Drawing.Point(355, 160);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(168, 249);
+            this.listBox1.Size = new System.Drawing.Size(131, 249);
             this.listBox1.Sorted = true;
             this.listBox1.TabIndex = 17;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -368,7 +372,7 @@
             // pA7
             // 
             this.pA7.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pA7.Location = new System.Drawing.Point(311, 60);
+            this.pA7.Location = new System.Drawing.Point(310, 60);
             this.pA7.Margin = new System.Windows.Forms.Padding(0);
             this.pA7.Name = "pA7";
             this.pA7.Size = new System.Drawing.Size(5, 5);
@@ -426,6 +430,34 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBoxValue1
+            // 
+            this.textBoxValue1.Location = new System.Drawing.Point(266, 161);
+            this.textBoxValue1.Name = "textBoxValue1";
+            this.textBoxValue1.Size = new System.Drawing.Size(83, 20);
+            this.textBoxValue1.TabIndex = 29;
+            // 
+            // textBoxValue2
+            // 
+            this.textBoxValue2.Location = new System.Drawing.Point(267, 216);
+            this.textBoxValue2.Name = "textBoxValue2";
+            this.textBoxValue2.Size = new System.Drawing.Size(82, 20);
+            this.textBoxValue2.TabIndex = 30;
+            // 
+            // textBoxValue3
+            // 
+            this.textBoxValue3.Location = new System.Drawing.Point(266, 278);
+            this.textBoxValue3.Name = "textBoxValue3";
+            this.textBoxValue3.Size = new System.Drawing.Size(83, 20);
+            this.textBoxValue3.TabIndex = 31;
+            // 
+            // textBoxValue4
+            // 
+            this.textBoxValue4.Location = new System.Drawing.Point(266, 334);
+            this.textBoxValue4.Name = "textBoxValue4";
+            this.textBoxValue4.Size = new System.Drawing.Size(83, 20);
+            this.textBoxValue4.TabIndex = 32;
+            // 
             // EntryForm
             // 
             this.AcceptButton = this.btnInsert;
@@ -433,6 +465,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(517, 581);
+            this.Controls.Add(this.textBoxValue4);
+            this.Controls.Add(this.textBoxValue3);
+            this.Controls.Add(this.textBoxValue2);
+            this.Controls.Add(this.textBoxValue1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -515,5 +551,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxValue1;
+        private System.Windows.Forms.TextBox textBoxValue2;
+        private System.Windows.Forms.TextBox textBoxValue3;
+        private System.Windows.Forms.TextBox textBoxValue4;
     }
 }

@@ -11,9 +11,7 @@ namespace QuizApp_1._0
 {
     class XmlMethods
     {
-    
-        /** New */
-        /* implemented 24.2.2019*/
+        
         public static void LoadXDocumnet(string filename)
         {
             try

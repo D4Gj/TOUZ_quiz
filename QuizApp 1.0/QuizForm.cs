@@ -12,6 +12,10 @@ namespace QuizApp_1._0
         private string Op_2 = "Op2";   // the question child tag
         private string Op_3 = "Op3";  // the question child tag
         private string Op_4 = "Op4"; // the question child tag
+        private string OpVal_1 = "Op_Val1";
+        private string OpVal_2 = "Op_Val2";
+        private string OpVal_3 = "Op_Val3";
+        private string OpVal_4 = "Op_Val4";
         private string Ans = "Ans"; // the question child tag
         private string Des = "Des";// the question child tag
         private bool isAlreadySeen = false; //if true the answ button will be disable

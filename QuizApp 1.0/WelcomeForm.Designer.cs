@@ -36,7 +36,7 @@
             // 
             // btnQuiz
             // 
-            this.btnQuiz.Location = new System.Drawing.Point(226, 67);
+            this.btnQuiz.Location = new System.Drawing.Point(154, 83);
             this.btnQuiz.Name = "btnQuiz";
             this.btnQuiz.Size = new System.Drawing.Size(75, 23);
             this.btnQuiz.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // btnEnterData
             // 
-            this.btnEnterData.Location = new System.Drawing.Point(226, 136);
+            this.btnEnterData.Location = new System.Drawing.Point(235, 83);
             this.btnEnterData.Name = "btnEnterData";
             this.btnEnterData.Size = new System.Drawing.Size(75, 23);
             this.btnEnterData.TabIndex = 1;
@@ -56,9 +56,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 29);
+            this.textBox1.Location = new System.Drawing.Point(12, 45);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(298, 20);
             this.textBox1.TabIndex = 2;
             // 
             // label1
@@ -66,15 +66,15 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 13);
+            this.label1.Size = new System.Drawing.Size(139, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Enter How Many Question You Want";
+            this.label1.Text = "Введите название фирмы";
             // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 171);
+            this.ClientSize = new System.Drawing.Size(323, 128);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEnterData);
