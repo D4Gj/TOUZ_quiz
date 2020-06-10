@@ -13,7 +13,7 @@ namespace QuizApp_1._0
         /// </summary>
         [STAThread]
         static void Main()
-        {
+       {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WelcomeForm());

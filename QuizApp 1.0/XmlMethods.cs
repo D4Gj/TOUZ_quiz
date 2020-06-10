@@ -37,7 +37,7 @@ namespace QuizApp_1._0
         }
 
         public static void InsertNewField(string fileName, string ID, string Question,
-            string Op1,string Op2,string Op3,string Op4, string Ans1, string Ans2, string Ans3, string Ans4, string Des)
+            string Op1,string Op2,string Op3,string Op4, string Ans1, string Ans2, string Ans3, string Ans4)
         {
             XDocument contact = XDocument.Load(fileName);
 
@@ -51,8 +51,8 @@ namespace QuizApp_1._0
                                     new XElement("Ans1", Ans1),
                                     new XElement("Ans2", Ans2),
                                     new XElement("Ans3", Ans3),
-                                    new XElement("Ans4", Ans4),
-                                    new XElement("Des", Des)
+                                    new XElement("Ans4", Ans4)
+                                    
                                     
                 );
 
@@ -142,8 +142,7 @@ namespace QuizApp_1._0
                                     new XElement("Ans1", "0"),
                                     new XElement("Ans2", "0"),
                                     new XElement("Ans3", "0"),
-                                    new XElement("Ans4", "0"),
-                                    new XElement("Des","Des")
+                                    new XElement("Ans4", "0")                                    
                 )
                 )
                 );

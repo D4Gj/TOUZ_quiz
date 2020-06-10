@@ -22,9 +22,6 @@ namespace QuizApp_1._0
         private int val4;
         private int SummaryAll=0;
         private int SummClient = 0;
-        private string Ans = "Ans"; // the question child tag
-        private string Des = "Des";// the question child tag
-        private bool isAlreadySeen = false; //if true the answ button will be disable
         private bool isAnsShown = false; 
         public int givnAns; //the given answ by the user
         private int FinalVerdict = 0; //the current\final score
@@ -50,10 +47,6 @@ namespace QuizApp_1._0
         }
         private void QuizForm_Load(object sender, EventArgs e)
         {
-            
-        
-
-
             XmlMethods.LoadXDocumnet(file); //Load the document (file creating remove when catch exception).
             setValuesToControl(0); //set the first question fro file
             lblQRemaining.Text = "Question NO. : " + 1 + "/" + ID.Length; //set the first question number
@@ -126,7 +119,6 @@ namespace QuizApp_1._0
                     Ite++;
                     CleanAll(); //clear all option box
 
-                    /* To stop cheating and Warn! */
                 }
                 else { MessageBox.Show("Выберите ответ!"); }
                 
@@ -206,8 +198,7 @@ namespace QuizApp_1._0
 
         }
         private   string[] generateQNoArray(string[] Blank, int NoOFQ)
-        {
-           
+        {           
             for(int i=0;i<NoOFQ;i++)
             {
                 Blank[i] = (i+1).ToString();

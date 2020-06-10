@@ -46,7 +46,7 @@ namespace QuizApp_1._0
 
                     XmlMethods.InsertNewField(filename, textID.Text,
                         textQes.Text, textOp1.Text, textOp2.Text, textOp3.Text,
-                        textOp4.Text, textBoxValue1.Text, textBoxValue2.Text, textBoxValue3.Text, textBoxValue4.Text, textDescrip.Text);
+                        textOp4.Text, textBoxValue1.Text, textBoxValue2.Text, textBoxValue3.Text, textBoxValue4.Text);
                     currentID++;
                     MessageBox.Show("Saved!");
                     cleanAll(); //clear all the option and question text box  for next entry
@@ -117,8 +117,6 @@ namespace QuizApp_1._0
             textBoxValue2.Text = "";
             textBoxValue3.Text = "";
             textBoxValue4.Text = "";
-            textDescrip.Text = "";
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -162,13 +160,6 @@ namespace QuizApp_1._0
             int getLastElement = id.Max();
            // Console.Write("max is" + getLastElement);
             return getLastElement;
-        }
-         private int howManyNumber2()
-        {
-            Ids = XmlMethods.getIDs(filename);
-            int cur = Ids.Count();
-            string getLastElement = Ids[cur-1];
-            return int.Parse(getLastElement);
         }
 
         private void checkAuto_CheckedChanged(object sender, EventArgs e)
@@ -260,11 +251,6 @@ namespace QuizApp_1._0
         }
 
         private void pA4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textDescrip_TextChanged(object sender, EventArgs e)
         {
 
         }

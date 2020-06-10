@@ -36,21 +36,21 @@
             // 
             // btnQuiz
             // 
-            this.btnQuiz.Location = new System.Drawing.Point(154, 83);
+            this.btnQuiz.Location = new System.Drawing.Point(72, 83);
             this.btnQuiz.Name = "btnQuiz";
-            this.btnQuiz.Size = new System.Drawing.Size(75, 23);
+            this.btnQuiz.Size = new System.Drawing.Size(106, 23);
             this.btnQuiz.TabIndex = 0;
-            this.btnQuiz.Text = "Play Quiz";
+            this.btnQuiz.Text = "Начать тест";
             this.btnQuiz.UseVisualStyleBackColor = true;
             this.btnQuiz.Click += new System.EventHandler(this.btnQuiz_Click);
             // 
             // btnEnterData
             // 
-            this.btnEnterData.Location = new System.Drawing.Point(235, 83);
+            this.btnEnterData.Location = new System.Drawing.Point(184, 83);
             this.btnEnterData.Name = "btnEnterData";
-            this.btnEnterData.Size = new System.Drawing.Size(75, 23);
+            this.btnEnterData.Size = new System.Drawing.Size(126, 23);
             this.btnEnterData.TabIndex = 1;
-            this.btnEnterData.Text = "Enter Data";
+            this.btnEnterData.Text = "Изменить вопросы";
             this.btnEnterData.UseVisualStyleBackColor = true;
             this.btnEnterData.Click += new System.EventHandler(this.btnEnterData_Click);
             // 
@@ -81,7 +81,7 @@
             this.Controls.Add(this.btnQuiz);
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WelcomeForm";
+            this.Text = "Главное окно";
             this.ResumeLayout(false);
             this.PerformLayout();
 
