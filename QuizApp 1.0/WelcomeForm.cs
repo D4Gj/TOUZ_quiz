@@ -14,6 +14,7 @@ namespace QuizApp_1._0
     {
         public static int NumberOFQ = 0;
         int Number=0;
+        private string filename = "Q.xml";
         public WelcomeForm()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace QuizApp_1._0
 
             try
             {
-                Number = 18;
+                Number = XmlMethods.getNumberOfElement(filename);
                 NumberOFQ = Number;
             }
             catch(FormatException)

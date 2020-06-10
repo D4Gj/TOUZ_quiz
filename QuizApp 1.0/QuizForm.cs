@@ -138,7 +138,32 @@ namespace QuizApp_1._0
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(SummClient>SummaryAll*0.65)
+            if (radioOption1.Checked)// check if ans is true
+            {
+                SummClient += val1;
+                QuestCount.Text = Convert.ToString(FinalVerdict);
+                isAnsShown = true;
+
+            }
+            if (radioOption2.Checked)// check if ans is true
+            {
+                SummClient += val2;
+                QuestCount.Text = Convert.ToString(FinalVerdict);
+                isAnsShown = true;
+            }
+            if (radioOption3.Checked)// check if ans is true
+            {
+                SummClient += val3;
+                QuestCount.Text = Convert.ToString(FinalVerdict);
+                isAnsShown = true;
+            }
+            if (radioOption4.Checked)// check if ans is true
+            {
+                SummClient += val4;
+                QuestCount.Text = Convert.ToString(FinalVerdict);
+                isAnsShown = true;
+            }
+            if (SummClient>SummaryAll*0.65)
             MessageBox.Show(string.Format("Вам следует взять кредит!"));
             else
                 MessageBox.Show(string.Format("Вам не следует брать кредит!"));
