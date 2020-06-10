@@ -9,32 +9,35 @@ using System.Xml.Linq;
 
 namespace QuizApp_1._0
 {
-    class XmlMethods
+    public class XmlMethods
     {
         
-        public static void LoadXDocumnet(string filename)
+        public static XDocument LoadXDocumnet(string filename)
         {
+            XDocument doc;
             try
             {
-                XDocument doc = XDocument.Load(filename);
+                doc = XDocument.Load(filename);
+               // creatXmlDocument(filename);
             }
             catch (System.IO.FileNotFoundException ex)
             {
                 MessageBox.Show("The file " + filename + " not found create a new One");
 
-               // creatXmlDocument(filename);
+                creatXmlDocument(filename);
             }
             catch (XmlException ex)
             {
 
                 MessageBox.Show("Error! \n File Corrupted \n Make New One as Same Name");
 
-               // creatXmlDocument(filename);
+                creatXmlDocument(filename);
             }
+            return XDocument.Load(filename);
         }
 
         public static void InsertNewField(string fileName, string ID, string Question,
-            string Op1,string Op2,string Op3,String Op4,string Ans,string Des)
+            string Op1,string Op2,string Op3,string Op4, string Ans1, string Ans2, string Ans3, string Ans4, string Des)
         {
             XDocument contact = XDocument.Load(fileName);
 
@@ -45,7 +48,10 @@ namespace QuizApp_1._0
                                     new XElement("Op2", Op2),
                                     new XElement("Op3", Op3),
                                     new XElement("Op4", Op4),
-                                    new XElement("Ans", Ans),
+                                    new XElement("Ans1", Ans1),
+                                    new XElement("Ans2", Ans2),
+                                    new XElement("Ans3", Ans3),
+                                    new XElement("Ans4", Ans4),
                                     new XElement("Des", Des)
                                     
                 );
@@ -123,18 +129,20 @@ namespace QuizApp_1._0
         /* create documnet if old one gets deletd */
         public static XDocument creatXmlDocument(string fileName)
         {
-            //april 12,2018 method implemented
             XDocument xDocument = new XDocument
                 (
                 new XElement("Quiz",
                 new XElement("Question",
                         new XAttribute("ID", "1"),
                                     new XElement("Qs", "Q1"),
-                                    new XElement("Op1", "false"),
-                                    new XElement("Op2", "false"),
-                                    new XElement("Op3", "false"),
-                                    new XElement("Op4", "false"),
-                                    new XElement("Ans", "Op1"),
+                                    new XElement("Op1", "0"),
+                                    new XElement("Op2", "0"),
+                                    new XElement("Op3", "0"),
+                                    new XElement("Op4", "0"),
+                                    new XElement("Ans1", "0"),
+                                    new XElement("Ans2", "0"),
+                                    new XElement("Ans3", "0"),
+                                    new XElement("Ans4", "0"),
                                     new XElement("Des","Des")
                 )
                 )

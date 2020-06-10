@@ -12,15 +12,21 @@ namespace QuizApp_1._0
         private string Op_2 = "Op2";   // the question child tag
         private string Op_3 = "Op3";  // the question child tag
         private string Op_4 = "Op4"; // the question child tag
-        private string OpVal_1 = "Op_Val1";
-        private string OpVal_2 = "Op_Val2";
-        private string OpVal_3 = "Op_Val3";
-        private string OpVal_4 = "Op_Val4";
+        private string OpVal_1 = "Ans1";
+        private string OpVal_2 = "Ans2";
+        private string OpVal_3 = "Ans3";
+        private string OpVal_4 = "Ans4";
+        private int val1;
+        private int val2;
+        private int val3;
+        private int val4;
+        private int SummaryAll=0;
+        private int SummClient = 0;
         private string Ans = "Ans"; // the question child tag
         private string Des = "Des";// the question child tag
         private bool isAlreadySeen = false; //if true the answ button will be disable
-        private bool isAnsShown = false; //for showing\hiding the answar panel
-        public string givnAns; //the given answ by the user
+        private bool isAnsShown = false; 
+        public int givnAns; //the given answ by the user
         private int FinalVerdict = 0; //the current\final score
         public string[] ID;/*{ "1", "2", "3", "4","5","6","7","8","9","10","11","12","13" }; //question numbers use as ID tag*/
         int Ite = 1; //iterator for ID array
@@ -50,7 +56,6 @@ namespace QuizApp_1._0
 
             XmlMethods.LoadXDocumnet(file); //Load the document (file creating remove when catch exception).
             setValuesToControl(0); //set the first question fro file
-            lblDescription.Text = XmlMethods.getQuention(file, Des,"1");
             lblQRemaining.Text = "Question NO. : " + 1 + "/" + ID.Length; //set the first question number
             
     }
@@ -83,30 +88,46 @@ namespace QuizApp_1._0
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (Ite <=( ID.Length-1))
+            if (Ite <( ID.Length) )
 
             {
-                setValuesToControl(Ite); //set the values and ans to the control
-                lblQRemaining.Text = "Question NO. : " + 
-                    (Ite+1) + "/" + ID.Length; //chnge the current question number of label
-
-                if (givnAns==Convert.ToString(true))// check if ans is true
+                if (radioOption1.Checked)// check if ans is true
                 {
-                    FinalVerdict+=1;
+                    SummClient += val1;
                     QuestCount.Text = Convert.ToString(FinalVerdict);
-                    
-                }
-               
-                Ite++;
-                CleanAll(); //clear all option box
+                    isAnsShown = true;
 
-                /* To stop cheating and Warn! */
-                if (isAnsShown == false)
-                {
-                    
-                    EnableAll();
                 }
-                else MessageBox.Show("Answar Is Open ! Close It!!"); //enable the option box
+                if (radioOption2.Checked)// check if ans is true
+                {
+                    SummClient += val2;
+                    QuestCount.Text = Convert.ToString(FinalVerdict);
+                    isAnsShown = true;
+                }
+                if (radioOption3.Checked)// check if ans is true
+                {
+                    SummClient += val3;
+                    QuestCount.Text = Convert.ToString(FinalVerdict);
+                    isAnsShown = true;
+                }
+                if (radioOption4.Checked)// check if ans is true
+                {
+                    SummClient += val4;
+                    QuestCount.Text = Convert.ToString(FinalVerdict);
+                    isAnsShown = true;
+                }
+                if (isAnsShown == true)
+                {
+                    setValuesToControl(Ite); //set the values and ans to the control
+                                               lblQRemaining.Text = "Question NO. : " + 
+                                                  (Ite+1) + "/" + ID.Length; //chnge the current question number of label
+
+                    Ite++;
+                    CleanAll(); //clear all option box
+
+                    /* To stop cheating and Warn! */
+                }
+                else { MessageBox.Show("Выберите ответ!"); }
                 
             }
             else
@@ -124,104 +145,26 @@ namespace QuizApp_1._0
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
-            if (givnAns == Convert.ToString(true)) MessageBox.Show(string.Format("You Got \n {0}", FinalVerdict + 1)); //for last question
-            else MessageBox.Show(string.Format("You Got \n {0}", FinalVerdict));
-
+            MessageBox.Show(string.Format("You Got \n {0}", SummClient + 1)); //for last question
         }
         /*----------------------End Buttons Action-----------------------*/
 
 
 
-
-
-
-        /*------------------------------Option Action--------------------*/
-        private void radioOption1_CheckedChanged(object sender, EventArgs e)
-        {
-            givnAns = Convert.ToString(checkAns(retunAns(lblAns), radioOption1.Text));
-        }
-
-        private void radioOption2_CheckedChanged(object sender, EventArgs e)
-        {
-            givnAns = Convert.ToString(checkAns(retunAns(lblAns), radioOption2.Text));
-        }
-
-        private void radioOption3_CheckedChanged(object sender, EventArgs e)
-        {
-            givnAns= Convert.ToString(checkAns(retunAns(lblAns), radioOption3.Text));
-        }
-
-        private void radioOption4_CheckedChanged(object sender, EventArgs e)
-        {
-        givnAns = Convert.ToString(checkAns(retunAns(lblAns), radioOption4.Text));
-
-        }
-       
-
-        
-        private void checkShowAns_Click(object sender, EventArgs e)
-        {
-            //show the answer panel
-            // if shown the options will remain disable untill next question take
-            //palce
-            if (isAnsShown == false)
-            {
-                groupAns.Show();
-                checkShowAns.Text = "Hide Answare";
-                isAnsShown = true;
-                isAlreadySeen = true;
-                if (isAlreadySeen) DisableAll();
-            }
-            //hide the answer panel
-            else { checkShowAns.Text = "Show Answare"; groupAns.Hide(); isAnsShown = false; }
-        }
-        private void checkShowMarks_Click(object sender, EventArgs e)
-        {
-            QuestCount.Show(); //show the current marks
-            label2.Show();
-        }
-        /*----------------------------End Option Action------------------------*/
-
-
-
-
-
-
-
         /*-------------------------Methods-------------------------*/
 
-
-        private string retunOpsAns(RadioButton btn)
-        {
-            string ans = btn.Text;
-            return ans;
-        } //get the ans from the radio button
-        private string retunAns(Label AnsLbl)
-        {
-            string ans = AnsLbl.Text;
-            return ans;
-        } //get the ans from the label
-        private bool checkAns(string CorrectAns, string GivenAns)
-        {
-            if (CorrectAns == GivenAns)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        } //check the ans by comparing it with the ans
         private void setValuesToControl(int IDs)
         {
+            isAnsShown = false;
             lblQuestion.Text = ID[IDs] + ".\n" + XmlMethods.getQuention(file, question, ID[IDs]);
             radioOption1.Text = XmlMethods.getQuention(file, Op_1, ID[IDs]);
             radioOption2.Text = XmlMethods.getQuention(file, Op_2, ID[IDs]);
             radioOption3.Text = XmlMethods.getQuention(file, Op_3, ID[IDs]);
             radioOption4.Text = XmlMethods.getQuention(file, Op_4, ID[IDs]);
-            lblAns.Text = XmlMethods.getQuention(file, Ans, ID[IDs]);
-            lblDescription.Text = XmlMethods.getQuention(file, Des, ID[IDs]);
+            val1 = Convert.ToInt32(XmlMethods.getQuention(file, OpVal_1, ID[IDs]));
+            val2 = Convert.ToInt32(XmlMethods.getQuention(file, OpVal_2, ID[IDs]));
+            val3 = Convert.ToInt32(XmlMethods.getQuention(file, OpVal_3, ID[IDs]));
+            val4 = Convert.ToInt32(XmlMethods.getQuention(file, OpVal_4, ID[IDs]));
         } //set all ans and question to their control
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -237,7 +180,7 @@ namespace QuizApp_1._0
             radioOption2.Checked = false;
             radioOption3.Checked = false;
             radioOption4.Checked = false;
-            givnAns = string.Empty;
+            givnAns = 0;
 
         }
         private void DisableAll()//disable this contol if the

@@ -30,7 +30,10 @@ namespace QuizApp_1._0
             if(textID.Text==""|textQes.Text=="" |
                 textOp1.Text==""|textOp2.Text==""|
                 textOp3.Text==""|textOp4.Text==""|
-                textCorrect.Text=="")
+                textBoxValue1.Text==""| 
+                textBoxValue2.Text == "" | 
+                textBoxValue3.Text == "" | 
+                textBoxValue4.Text == "")
             {
                 markRedIFEmpty();
                 MessageBox.Show("Fill All Box");
@@ -43,7 +46,7 @@ namespace QuizApp_1._0
 
                     XmlMethods.InsertNewField(filename, textID.Text,
                         textQes.Text, textOp1.Text, textOp2.Text, textOp3.Text,
-                        textOp4.Text, textCorrect.Text, textDescrip.Text);
+                        textOp4.Text, textBoxValue1.Text, textBoxValue2.Text, textBoxValue3.Text, textBoxValue4.Text, textDescrip.Text);
                     currentID++;
                     MessageBox.Show("Saved!");
                     cleanAll(); //clear all the option and question text box  for next entry
@@ -86,7 +89,7 @@ namespace QuizApp_1._0
 
         private void EntryForm_Load(object sender, EventArgs e)
         {
-            doc = XDocument.Load(filename);
+            doc = XmlMethods.LoadXDocumnet(filename);
 
            
             currentID =getMaxID();
@@ -110,7 +113,10 @@ namespace QuizApp_1._0
             textOp2.Text = "";
             textOp3.Text = "";
             textOp4.Text = "";
-            textCorrect.Text = "";
+            textBoxValue1.Text = "";
+            textBoxValue2.Text = "";
+            textBoxValue3.Text = "";
+            textBoxValue4.Text = "";
             textDescrip.Text = "";
 
         }
@@ -189,7 +195,10 @@ namespace QuizApp_1._0
                 XmlMethods.getQuention(filename, "Op2", IDs),
                 XmlMethods.getQuention(filename, "Op3", IDs),
                 XmlMethods.getQuention(filename, "Op4", IDs),
-                XmlMethods.getQuention(filename, "Ans", IDs)
+                XmlMethods.getQuention(filename, "Ans1", IDs),
+                XmlMethods.getQuention(filename, "Ans2", IDs),
+                XmlMethods.getQuention(filename, "Ans3", IDs),
+                XmlMethods.getQuention(filename, "Ans4", IDs)
 
                 ),listBox1,1000);
            
@@ -202,7 +211,6 @@ namespace QuizApp_1._0
             if ( textOp2.Text == "") pA3.BackColor = Color.Red;else pA3.BackColor = Color.LimeGreen;
             if ( textOp3.Text == "") pA4.BackColor = Color.Red;else pA4.BackColor = Color.LimeGreen;
             if ( textOp4.Text == "") pA5.BackColor = Color.Red;else pA5.BackColor = Color.LimeGreen;
-            if ( textCorrect.Text == "") pA6.BackColor = Color.Red; else pA6.BackColor = Color.LimeGreen;
             if (textID.Text == "") pA7.BackColor = Color.Red;else pA7.BackColor = Color.LimeGreen;
         }
         private void resetColor()
@@ -213,7 +221,6 @@ namespace QuizApp_1._0
             if (textOp2.Text == "") pA3.BackColor = Color.DodgerBlue;
             if (textOp3.Text == "") pA4.BackColor = Color.DodgerBlue;
             if (textOp4.Text == "") pA5.BackColor = Color.DodgerBlue;
-            if (textCorrect.Text == "") pA6.BackColor = Color.DodgerBlue;
             if (textID.Text == "") pA7.BackColor = Color.DodgerBlue; 
         }
 
