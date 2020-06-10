@@ -58,7 +58,7 @@ namespace QuizApp_1._0
             setValuesToControl(0); //set the first question fro file
             lblQRemaining.Text = "Question NO. : " + 1 + "/" + ID.Length; //set the first question number
             
-    }
+        }
 
 
 
@@ -121,6 +121,7 @@ namespace QuizApp_1._0
                     setValuesToControl(Ite); //set the values and ans to the control
                                                lblQRemaining.Text = "Question NO. : " + 
                                                   (Ite+1) + "/" + ID.Length; //chnge the current question number of label
+                    SummaryAll += val1 + val2 + val3 + val4;
 
                     Ite++;
                     CleanAll(); //clear all option box
@@ -145,7 +146,10 @@ namespace QuizApp_1._0
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("You Got \n {0}", SummClient + 1)); //for last question
+            if(SummClient>SummaryAll*0.65)
+            MessageBox.Show(string.Format("Вам следует взять кредит!"));
+            else
+                MessageBox.Show(string.Format("Вам не следует брать кредит!"));
         }
         /*----------------------End Buttons Action-----------------------*/
 

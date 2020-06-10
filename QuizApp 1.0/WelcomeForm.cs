@@ -23,12 +23,12 @@ namespace QuizApp_1._0
 
             try
             {
-                Number = int.Parse(textBox1.Text);
+                Number = 18;
                 NumberOFQ = Number;
             }
             catch(FormatException)
             {
-                Number = 5;
+                Number = 18;
                 NumberOFQ = Number;
             }
 
