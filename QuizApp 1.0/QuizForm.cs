@@ -49,7 +49,7 @@ namespace QuizApp_1._0
         {
             XmlMethods.LoadXDocumnet(file); //Load the document (file creating remove when catch exception).
             setValuesToControl(0); //set the first question fro file
-            lblQRemaining.Text = "Question NO. : " + 1 + "/" + ID.Length; //set the first question number
+            lblQRemaining.Text = "Вопрос NO. : " + 1 + "/" + ID.Length; //set the first question number
             
         }
 
@@ -112,7 +112,7 @@ namespace QuizApp_1._0
                 if (isAnsShown == true)
                 {
                     setValuesToControl(Ite); //set the values and ans to the control
-                                               lblQRemaining.Text = "Question NO. : " + 
+                                               lblQRemaining.Text = "Вопрос NO. : " + 
                                                   (Ite+1) + "/" + ID.Length; //chnge the current question number of label
                     SummaryAll += val1 + val2 + val3 + val4;
 
@@ -125,7 +125,7 @@ namespace QuizApp_1._0
             }
             else
             {
-                MessageBox.Show("You Have Completed!");
+                MessageBox.Show("Вы закончили!");
             }
 
 

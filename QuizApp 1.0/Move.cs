@@ -55,18 +55,6 @@ namespace QuizApp_1._0
 
             ControlToDragedd.MouseUp += MouseUpEvent;
         }
-
-        /* public void MakeFromDraggablwWithParent(Form Parent, Form Child)
-         {
-             ParentFrom = Parent;
-             this.Child = Child;
-             int X = Parent.Location.X;
-             int Y = Parent.Location.Y;
-             int Height = Parent.Height;
-             Child.Location = new Point(X, Y + Height);
-
-
-         }*/
         private void MouseDownEvent(Object sender, MouseEventArgs e)
         {
             Offset = new Point(e.X, e.Y); //recode the mouse position

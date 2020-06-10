@@ -48,7 +48,7 @@ namespace QuizApp_1._0
                         textQes.Text, textOp1.Text, textOp2.Text, textOp3.Text,
                         textOp4.Text, textBoxValue1.Text, textBoxValue2.Text, textBoxValue3.Text, textBoxValue4.Text);
                     currentID++;
-                    MessageBox.Show("Saved!");
+                    MessageBox.Show("Сохранено!");
                     cleanAll(); //clear all the option and question text box  for next entry
                     resetColor(); //reset the color to blue.
                     if (autoID ==false)
@@ -59,7 +59,7 @@ namespace QuizApp_1._0
                 }
                 else
                 {
-                    MessageBox.Show("ID Already There!");
+                    MessageBox.Show("Этот айди уже занят!");
                 }
             }
 
@@ -127,7 +127,7 @@ namespace QuizApp_1._0
         private void button2_Click(object sender, EventArgs e)
         {
             string Id = listBox1.SelectedItem.ToString();
-            DialogResult deleteD = MessageBox.Show("Do You want to delete " + Id, "Delete",
+            DialogResult deleteD = MessageBox.Show("Вы хотите удалить вопрос под номером " + Id, "Удалить",
                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(deleteD==DialogResult.Yes)
             {
