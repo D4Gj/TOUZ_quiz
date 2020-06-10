@@ -204,24 +204,6 @@ namespace QuizApp_1._0
             givnAns = 0;
 
         }
-        private void DisableAll()//disable this contol if the
-        {
-            radioOption1.Enabled = false;
-            radioOption2.Enabled = false;
-            radioOption3.Enabled = false;
-            radioOption4.Enabled = false;
-
-
-        }
-        private void EnableAll()//clear the ans and selection
-        {
-            radioOption1.Enabled = true;
-            radioOption2.Enabled = true;
-            radioOption3.Enabled = true;
-            radioOption4.Enabled = true;
-
-
-        }
         private   string[] generateQNoArray(string[] Blank, int NoOFQ)
         {           
             for(int i=0;i<NoOFQ;i++)
